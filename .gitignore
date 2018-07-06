@@ -1,0 +1,9 @@
+/runtime/*
+/public/uploads/*
+.idea
+composer.lock
+*.log
+!.gitkeep
+/vendor/*
+/thinkphp/*
+.env

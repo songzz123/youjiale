@@ -1,0 +1,74 @@
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+
+    <!--面包屑-->
+    <div id="ribbon">
+        <ol class="breadcrumb pull-left abcolor">
+            <li class="my-crumbs">
+                <a href="javascript:;" data-url="/admin/datalibrary/datalibrary">对话节点效果分析</a>
+            </li>
+            <li class="my-crumbs acolor">
+                <a href="javascript:;" data-url="/admin/datalibrary/index">添加</a>
+            </li>
+        </ol>
+    </div>
+
+    <!--上传类型-->
+    <div class="form-group">
+        <label for="type" class="control-label col-xs-12 col-sm-2">{:__('请选择类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <select class="form-control" id="type" name="type">
+                    <option value=0 selected>节点效果</option>
+                    <option value=1>原始数据</option>
+                    <option value=2>流量效果</option>
+                    <option value=3>测试答题记录</option>
+                    <option value=4>kupperman测试结果</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!--项目类型-->
+    <div class="form-group">
+        <label for="type" class="control-label col-xs-12 col-sm-2">{:__('请选择类型')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <select class="form-control" id="group_id" name="group_id">
+                    <option value=2 selected>静心</option>
+                    <option value=3>哈药</option>
+                    <option value=4>葵花</option>
+                    <option value=5>优甲乐</option>
+                    <option value=6>植发</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!--文件上传-->
+    <div class="form-group">
+        <label for="path" class="control-label col-xs-12 col-sm-2">{:__('上传文件(csv,xlsx,xls)')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <div class="input-group">
+                <input id="path" class="form-control" size="50" name="path" type="text" value="">
+                <div class="input-group-addon no-border no-padding">
+                    <span><button type="button" id="plupload-image" class="btn btn-danger plupload"
+                                  data-input-id="path"
+                                  data-mimetype="csv,xlsx,xls"
+                                  data-multiple="false" data-preview-id="cp-image"><i class="fa fa-upload"></i> {:__('Upload')}</button></span>
+                </div>
+                <span class="msg-box n-right"></span>
+            </div>
+            <ul class="row list-inline plupload-preview" id="cp-image"></ul>
+        </div>
+    </div>
+
+    <!--提交-->
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+
+</form>

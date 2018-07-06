@@ -1,0 +1,204 @@
+
+<form id="add-form" class="form-horizontal form-ajax" role="form" data-toggle="validator" method="POST" action="">
+    <input type="hidden" name="id" value="{$row.id}">
+
+     <!--面包屑-->
+    <div id="ribbon">
+        <ol class="breadcrumb pull-left">
+            <li class="my-crumbs" style="font-size: 17px;color: #0089D4"><a href="javascript:;"
+                                                                            data-url="/admin/datalibrary/datalibrary">数据库</a>
+            </li>
+            <li class="my-crumbs" style="font-size: 17px;color: #0089D4"><a href="javascript:;"
+                                                                            data-url="/admin/datalibrary/index">修改</a>
+            </li>
+        </ol>
+    </div>
+
+
+    <!--客户名称-->
+    <div class="form-group">
+        <label for="group_id" class="control-label col-xs-12 col-sm-2">{:__('Group Id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('group_id',$group_id,$row.group_id,['class'=>'form-control selectpicker', 'data-rule'=>'required'])}
+        </div>
+    </div>
+
+    <!--和内容库关联id-->
+    <div class="form-group">
+        <label for="content_library_id" class="control-label col-xs-12 col-sm-2">{:__('Content Library Id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="content_library_id" name="content_library_id" value="{$row.content_library_id}"
+                   data-rule="required;content_library_id"/>
+        </div>
+    </div>
+
+    <!--campign名称-->
+    <div class="form-group">
+        <label for="campaign" class="control-label col-xs-12 col-sm-2">{:__('Campaign')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="campaign" name="campaign" value="{$row.campaign}"
+                   data-rule="required;campaign"/>
+        </div>
+    </div>
+
+    <!--投放主题名称-->
+    <div class="form-group">
+        <label for="subject_name" class="control-label col-xs-12 col-sm-2">{:__('Subject Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="subject_name" name="subject_name" value="{$row.subject_name}"
+                   data-rule="required;campaign"/>
+        </div>
+    </div>
+
+    <!--投放设备类型-->
+    <div class="form-group">
+        <label for="device_type" class="control-label col-xs-12 col-sm-2">{:__('Device Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('device_type',$device_type,$row.device_type,['class'=>'form-control selectpicker', 'data-rule'=>'required'])}
+        </div>
+    </div>
+
+    <!--媒体类型-->
+    <div class="form-group">
+        <label for="media_type" class="control-label col-xs-12 col-sm-2">{:__('Media Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('media_type[]', $media_type, $row.media_type, ['class'=>'form-control selectpicker', 'multiple'=>'',
+            'data-rule'=>'required'])}
+        </div>
+    </div>
+
+    <!--媒体名称-->
+    <div class="form-group">
+        <label for="media_name" class="control-label col-xs-12 col-sm-2">{:__('Media Name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="media_name" name="media_name" value="{$row.media_name}"
+                   data-rule="required;media_name"/>
+        </div>
+    </div>
+
+    <!--广告类型-->
+    <div class="form-group">
+        <label for="ad_type" class="control-label col-xs-12 col-sm-2">{:__('Ad Type')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_select('ad_type',$ad_type,$row.ad_type,['class'=>'form-control selectpicker', 'data-rule'=>'required'])}
+        </div>
+    </div>
+
+    <!--广告位置-->
+    <div class="form-group">
+        <label for="ad_position" class="control-label col-xs-12 col-sm-2">{:__('Ad Position')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="ad_position" name="ad_position" value="{$row.ad_position}"
+                   data-rule="required;ad_position"/>
+        </div>
+    </div>
+
+    <!--广告花费-->
+    <div class="form-group">
+        <label for="ad_cost" class="control-label col-xs-12 col-sm-2">{:__('Ad Cost')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="ad_cost" name="ad_cost" value="{$row.ad_cost}"
+                   data-rule="required;ad_cost"/>
+        </div>
+    </div>
+
+    <!--广告链接-->
+    <div class="form-group">
+        <label for="ad_serving" class="control-label col-xs-12 col-sm-2">{:__('Ad Serving')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="ad_serving" name="ad_serving" value="{$row.ad_serving}"
+                   data-rule="required;ad_serving"/>
+        </div>
+    </div>
+
+    <!--投放时间-->
+    <div class="form-group">
+        <label for="serving_time" class="control-label col-xs-12 col-sm-2">{:__('Serving time')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control datepicker" id="serving_time" name="serving_time" value="{$row.serving_time}"
+                   data-rule="required;serving_time"/>
+        </div>
+    </div>
+
+    <!--曝光量-->
+    <div class="form-group">
+        <label for="light_exposure" class="control-label col-xs-12 col-sm-2">{:__('Light Exposure')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="light_exposure" name="light_exposure" value="{$row.light_exposure}"
+                   data-rule="required;light_exposure"/>
+        </div>
+    </div>
+
+    <!--阅读量-->
+    <div class="form-group">
+        <label for="amount_reading" class="control-label col-xs-12 col-sm-2">{:__('Amount Reading')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_reading" name="amount_reading" value="{$row.amount_reading}"
+                   data-rule="required;amount_reading"/>
+        </div>
+    </div>
+
+    <!--转发量-->
+    <div class="form-group">
+        <label for="amount_transmit" class="control-label col-xs-12 col-sm-2">{:__('Amount Transmit')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_transmit" name="amount_transmit" value="{$row.amount_transmit}"
+                   data-rule="required;amount_transmit"/>
+        </div>
+    </div>
+
+    <!--点赞数-->
+    <div class="form-group">
+        <label for="amount_upvote" class="control-label col-xs-12 col-sm-2">{:__('Amount Upvote')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_upvote" name="amount_upvote" value="{$row.amount_upvote}"
+                   data-rule="required;amount_transmit"/>
+        </div>
+    </div>
+
+    <!--评论数-->
+    <div class="form-group">
+        <label for="amount_comments" class="control-label col-xs-12 col-sm-2">{:__('Amount Comments')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_comments" name="amount_comments" value="{$row.amount_comments}"
+                   data-rule="required;amount_comments"/>
+        </div>
+    </div>
+
+    <!--粉丝数-->
+    <div class="form-group">
+        <label for="amount_fans" class="control-label col-xs-12 col-sm-2">{:__('Amount Fans')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_fans" name="amount_fans" value="{$row.amount_fans}"
+                   data-rule="required;amount_fans"/>
+        </div>
+    </div>
+
+    <!--收藏量-->
+    <div class="form-group">
+        <label for="amount_collection" class="control-label col-xs-12 col-sm-2">{:__('Amount Collection')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_collection" name="amount_collection" value="{$row.amount_collection}"
+                   data-rule="required;amount_collection"/>
+        </div>
+    </div>
+
+    <!--销售转化量-->
+    <div class="form-group">
+        <label for="amount_sales_conversion" class="control-label col-xs-12 col-sm-2">{:__('Amount Sales Conversion')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input type="text" class="form-control" id="amount_sales_conversion" name="amount_sales_conversion" value="{$row.amount_sales_conversion}"
+                   data-rule="required;amount_sales_conversion"/>
+        </div>
+    </div>
+
+    <!--提交-->
+    <div class="form-group hidden layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+
+</form>

@@ -1,0 +1,96 @@
+<style type="text/css">
+
+    .sm-st-info span {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .item {
+        padding: 30px 0;
+    }
+
+    .highlight {
+        color: red;
+    }
+</style>
+<div class="panel panel-default panel-intro">
+
+    <div class="panel-body">
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <span class="col-lg-3">
+                        开始时间<input type="text" name="starttime" class="starttime datepicker " value="">
+                        </span>
+                        <span class="col-lg-3">
+                        结束时间<input type="text" name="endtime" class="endtime datepicker " value="">
+                        </span>
+
+                        <span class="col-lg-3">
+                        选项<select name="type" id="type">
+                            <option value='sum_uv' selected>UV数</option>
+                            <option value='rate_uv' selected>UV占比</option>
+                            </select>
+                        </span>
+                    </div>
+                    <div class="col-lg-12">
+                    </div>
+
+                    <div class="col-lg-12">
+                        <button type="button" class="btn btn-success date-search">查询</button>
+                    </div>
+                    <div class="col-lg-12">
+                        <div id="echart-top" style="height:250px;width:100%;"></div>
+                    </div>
+                </div>
+                <div class="row" id="echart-body">
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="two">
+                <div class="row">
+                    <div class="col-xs-12">
+                        {:__('Custom zone')}
+                    </div>
+                </div>
+            </div>
+             <table class="table table-bordered" id="t-table">
+
+            </table>
+        </div>
+    </div>
+</div>
+<script id="newstpl" type="text/html">
+    <ul class="nav nav-stacked">
+        <%for(var i=0;i < news.length;i++){%>
+        <%var item=news[i];%>
+        <li>
+            <a href="<%=item.url%>" target="_blank">
+                <span class="text"><%=item.title%></span>
+            </a>
+        </li>
+        <%}%>
+    </ul>
+</script>
+
+<script id="discussiontpl" type="text/html">
+    <ul class="products-list product-list-in-box">
+        <%for(var i=0;i < news.length;i++){%>
+        <%var item=news[i];%>
+        <li class="item">
+            <div class="">
+                <a href="<%=item.url%>" target="_blank" class="product-title"><%=item.title%>
+                    <span class="label label-warning pull-right"><%=item.comments_count%></span></a>
+                <span class="product-description">
+                    <%=item.last_time%>
+                </span>
+            </div>
+        </li>
+        <%}%>
+    </ul>
+</script>
+
+
+

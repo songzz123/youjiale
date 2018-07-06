@@ -1,0 +1,1206 @@
+
+<html lang="zh-cn" >
+<head>
+    <meta charset="utf-8" />
+    <meta HTTP-EQUIV="pragma" CONTENT="no-cache">
+    <meta HTTP-EQUIV="Cache-Control" CONTENT="no-cache, must-revalidate">
+    <meta HTTP-EQUIV="expires" CONTENT="B">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no" media="screen" />
+    <title>百度人工智能哈药-三精儿童营养专题</title>
+    <link rel="stylesheet" href="/assets/css/hayao/default-skin/photoswipe.css">
+    <link rel="stylesheet" href="/assets/css/hayao/default-skin/default-skin.css">
+    <style type="text/css">
+        #top-banner{
+            position: fixed;
+            top:0;
+            left:0;
+            width:90%;
+            padding:0.8rem 5%;
+            background: -webkit-linear-gradient(left, #e974b7,#bd51b2,#9d16cf,#4e0ae8);
+            text-align: center;
+            color:#fff;
+            font-size:18px;
+            z-index: 66;
+        }
+        #top-banner span{
+            float:left;
+            font-size:20px;
+        }
+        body{
+            /*position: relative;*/
+            /*margin: 0;*/
+            /*width:100%;*/
+            min-height:100%;
+            background-image: url(/assets/img/hayao/images/bg.jpg);
+            background-size:100% 100%;
+            overflow: hidden;
+        }
+        @media all and (min-width: 640px) {
+            body,html,.wenwen-footer,.speak_window{width:640px!important;margin:0 auto}
+            .speak_window,.wenwen-footer{left:50%!important;margin-left:-320px}
+        }
+        input,button{outline:none;width: 25px;background-color: #d2dff0;}
+        /*//对话部分//*/
+        .wenwen-footer{width:100%;position:fixed;bottom:-5px;left:0;background:#ee8e8e;padding:3%;border-top:solid 1px #ddd;box-sizing:border-box;display:block;}
+        .wenwen_btn{width:10%;text-align:center;}
+        .wenwen_help{width:15%;text-align:center;}
+        .wenwen_btn img{width:100%}
+        .wenwen-footer{width:100%;position:fixed;bottom:-5px;left:0;background:#0367e3;padding:3%;-border-top:solid 1px #ddd;box-sizing:border-box;display:block;}
+        .wenwen_btn{-margin-top:5px;width:5%;text-align:center;}
+        .wenwen_help{width:8%;text-align:center;}
+        .wenwen_btn img{width:100%}
+        .wenwen_text{height:36px;-border-radius:5px;border:solid 1px #636162;box-sizing:border-box;width:80%;text-align:center;overflow:hidden;margin-left:5%;}
+        .circle-button{padding:0 5px;}
+        .wenwen_text .circle-button{font-size:14px;color:#666;line-height:38px;}
+        .write_box{-background:#f2a7a7;width:100%;height:40px;line-height:40px;display:block;}
+        .write_box input{height:36px;padding:0 5px;line-height:36px;width:100%;box-sizing:border-box;border:0;}
+        .wenwen_help button{padding:0;margin-top:1px;width:100%;background-color:transparent;border: none;}
+        .wenwen_help button > img{
+            width:100%;
+        }
+        #wenwen{height:100%;}
+        .speak_window{overflow-y:scroll;height:100%;width:100%;position:fixed;top:0;left:0;}
+        .speak_box{margin-bottom:100px;margin-top:3rem;padding:18px;}
+        .question,.answer{margin-bottom:1rem;}
+        .question{text-align:right;}
+        .question>div{display:inline-block;}
+        .left{float:left;}
+        .right{float:right;}
+        .clear{clear:both;}
+        .heard_img{height:50px;width:50px;border-radius:5px;overflow:hidden;background:#ddd;border-radius: 50%;}
+        .heard_img img{width:100%;height:100%}
+        .question_text,.answer_text{box-sizing:border-box;position:relative;display:table-cell;min-height:54px;}
+        .question_text{padding-right:20px;}
+        .answer_text{-padding:25px 50px 0 21px;padding-left: 20px;padding-right: 50px;}
+        #question_text_my p{
+            border-radius:10px;
+        }
+        .question_text p,.answer_text p{border-radius:10px;padding:.5rem;margin:0;font-size:14px;line-height:20px;vertical-align:middle;display:table-cell;height:50px;word-wrap:break-word;color:#fff;}
+        .answer_text p{background:#037ce3;min-width: 30px;}
+        .question_text p{background-color:#0462ba;color:#fff;text-align:left;}
+        .question_text i,.answer_text i{width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;position:absolute;top:20px;}
+        .answer_text i{border-right:10px solid #037ce3;left:10px;}
+        .question_text i{border-left:10px solid #0462ba;right:10px;}
+        .answer_text p a{color:#42929d;display:inline-block;}
+        audio{display:none;}
+        .saying{position:fixed;bottom:30%;left:50%;width:120px;margin-left:-60px;display:none;}
+        .saying img{width:100%;}
+        .write_list{position:absolute;left:0;width:100%;background:#fff;border-top:solid 1px #ddd;padding:5px;line-height:30px;}
+        /*//问答部分//*/
+        .cf:after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        .answer-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image:linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+            display: none;
+        }
+        .yesorno-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .growup-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .sanjing-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .sanjing-xin-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .sanjing-gai-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .other-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .dha-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .yi-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .wei-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .kuang-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .vc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .dan-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .tan-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .ZnCa-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .Ca-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .Zn-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;-background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            -background:rgba(126,173,232,0.9);
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image:linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .helpFunc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .fatFunc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .sinFunc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .manyFunc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .testFunc-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image:linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+        .test-footer{
+            width:100%;position:fixed;bottom:-5px;left:0;background:#fff;padding:3%;border-top:solid 2px #0075a9;box-sizing:border-box;min-height:4rem;
+            background-clip: padding-box,border-box;
+            background-origin: padding-box,border-box;
+            background-image: linear-gradient(90deg,#7eace6,#8ab6e9,#a7caf0);
+
+            display: none;
+        }
+
+        ul,li{
+            list-style: none;
+            margin:0;
+            padding:0;
+        }
+        .question-box{
+
+            margin:0 auto;
+            width:100%;
+        }
+
+        .answer1{
+
+        }
+        .answer2{
+            display:none;
+        }
+        .answer3{
+            display:none;
+        }
+        .answer4{
+            display:none;
+        }
+        .answer5{
+            display:none;
+        }
+        .answer6{
+            display:none;
+        }
+        .answer7{
+            display:none;
+        }
+        .answer8{
+            display:none;
+        }
+        .answer9{
+            display:none;
+        }
+        .answer10{
+            display:none;
+        }
+        .answer11{
+            display:none;
+        }
+        .answer12{
+            display:none;
+        }
+        .answer13{
+            display:none;
+        }
+        .answer14{
+            display:none;
+        }
+        .answer15{
+            display:none;
+        }
+
+        .answer-title{
+            margin-bottom:0.5rem;
+            width:100%;
+            font-size:14px;
+            color:#0075a9;
+            text-align: center;
+        }
+        .question-each,.question-each-sp{
+            text-align: center;
+            float:left;
+            width:45%;
+            margin:0.5rem 2.5%;
+            padding:0.5rem;
+            font-size: 14px;
+            color:#1f7fb2;
+            -background-color: #ebe3cc;
+            box-sizing:border-box;
+            border:1px solid transparent;
+            border-radius: 16px;
+            border:1px solid #005982;
+            -background-clip:padding-box,border-box;
+            -background-origin:padding-box,border-box;
+            -background-image:linear-gradient(90deg,#fff,#fff),linear-gradient(90deg,#da47a1,#9d16cf,#4e0ae8);
+        }
+        .question-eachs{
+            text-align: center;
+            float:left;
+            width:95%;
+            margin:0.5rem 2.5%;
+            padding:0.5rem;
+            font-size: 14px;
+            color:#1f7fb2;
+            -background-color: #ebe3cc;
+            box-sizing:border-box;
+            border:1px solid transparent;
+            border-radius: 16px;
+            border:1px solid #005982;
+            -background-clip:padding-box,border-box;
+            -background-origin:padding-box,border-box;
+            -background-image:linear-gradient(90deg,#fff,#fff),linear-gradient(90deg,#da47a1,#9d16cf,#4e0ae8);
+        }
+        .yesorno-each{
+            text-align: center;
+        }
+        .active{
+            background-color:#0454c2;
+        }
+
+        /*//点击图片//*/
+        .answerH{
+            display:none;
+
+        }
+        .answer-img{
+            width:30%;
+        }
+
+        .imgS{
+            width:100%;
+        }
+        figure{
+            margin:0;
+            padding:0;
+            width:100%;
+        }
+        figure > a{
+            width:100%;
+        }
+        .imgSi{
+            width:100%;
+            vertical-align: middle;
+            border-radius: 5px;
+        }
+
+        .cf:after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+        #question_text_my > a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            text-align: left;
+        }
+        .text_my-link-title {
+            display: block;
+            width:100%;
+            color:#000;
+            text-decoration: none;
+        }
+        .text_my-link-box {
+            display: block;
+            width: 100%;
+        }
+        .text_my-link-left {
+            float: left;
+            width: 80%;
+            font-size: 12px;
+            color: #ccc;
+        }
+        .text_my-link-right{
+
+
+        }
+        .text_my-link-right > img{
+            width: 100%;
+        }
+        .p_img {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .p_img > img{
+            width: 100%;
+        }
+
+        #hy-popup_layer{
+            -text-align: center;
+            position:absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width:100%;
+            height:100%;
+            display:none;
+        }
+        #sp-popup_layer{
+            -text-align: center;
+            position:absolute;
+            left: 0;
+            top: 100px;
+            right: 0;
+            bottom: 0;
+            width:100%;
+            height:50%;
+            display:none;
+        }
+        #du-popup_layer{
+            -text-align: center;
+            position:absolute;
+            left: 0;
+            top: 60px;
+            right: 0;
+            bottom: 0;
+            width:100%;
+            height:80%;
+            display:none;
+        }
+        .hy-pop-close{
+            position: absolute;
+            top: 12%;
+            right: 13%;
+            color: #fff;
+            font-size: 24px;
+            z-index: 9999;
+        }
+        .hy-popup_content{
+            z-index: 1999;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 20%;
+            padding: 0.5rem 6%;
+            width: 70%;
+            height: 60%;
+            min-height: 10px;
+            background-color: #92bce6;
+            border-radius: 10px;
+            overflow: auto;
+        }
+        .du-pop-close{
+            position: absolute;
+            top: 3%;
+            right: 12%;
+            color: #fff;
+            font-size: 24px;
+            z-index: 9999;
+        }
+
+        .du-popup-mask{
+            z-index: 999;
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0, 0.8) !important; /* IE无效，FF有效 */
+            filter: alpha(opacity=80);
+            -moz-opacity:0.8;
+            opacity: 0.8;
+            -webkit-opacity: 0.8;
+        }
+        .du-popup_content{
+            z-index: 1999;
+            position: relative;
+            margin: 0 auto;
+            margin-top: 1%;
+            padding: 0.5rem 6%;
+            width: 70%;
+            height: 95%;
+            min-height: 10px;
+            background-color: #92bce6;
+            border-radius: 10px;
+            overflow: auto;
+        }
+
+        .du-popup-size{
+            margin:0;
+            font-size:14px;
+            color:#000;
+            padding-top: 2rem;
+            line-height: 24px;
+        }
+        .sp-pop-close{
+            position: absolute;
+            top: 3%;
+            right: 11%;
+            color: #fff;
+            font-size: 24px;
+            z-index: 9999;
+        }
+        .reviewBtn {
+            background: rgb(0,160,233);
+            color: white;
+            border-radius: 6px;
+            padding: 9px 7px;
+            margin: 3px;
+            display: inline-block;
+        }
+        /** 专家说 按钮 **/
+
+        .reviewBtns {
+            background: rgb(0,160,233);
+            color: white;
+            border-radius: 6px;
+            padding: 9px 7px;
+            margin: 3px;
+            display: inline-block;
+        }
+        /*
+        生长发育自测弹出层
+         */
+        .fy-pop-close{
+            position: absolute;
+            top: 3%;
+            right: 13%;
+            color: #ff2328;
+            font-size: 24px;
+            z-index: 9999;
+        }
+        #fy-popup_layer{
+            -text-align: center;
+            position:absolute;
+            left: 0;
+            top: 72px;
+            right: 0;
+            bottom: 0;
+            width:100%;
+            height:85%;
+            display:none;
+        }
+        .fy-popup-size{
+            width:100%;
+            height:100%;
+            overflow-y: auto;
+        }
+        .fy-popup-size > p{
+            font-size:14px;
+            color:#000;
+            padding-top: 2rem;
+            line-height: 24px;
+        }
+        .fy-popup-size > img{
+            display:block;
+            margin:0 auto;
+            width:50%;
+        }
+        .answer-each-btn{
+            margin: 0 auto;
+            padding:0.5rem 0;
+            width:30%;
+            text-align: center;
+            font-size: 14px;
+            color:#000;
+            background-color: transparent;
+            border:1px solid #005982;
+            border-radius: 16px;
+
+        }
+    </style>
+
+
+
+
+
+
+
+</head>
+<body>
+<div class="speak_window">
+    <!--<div id="top-banner"><span>&lt;</span>小度</div>-->
+    <div class="speak_box">
+    </div>
+</div>
+<div class="saying">
+    <img src="/assets/img/hayao/images/saying.gif">
+</div>
+<!--对话部分-->
+<div class="wenwen-footer">
+    <!--<div class="wenwen_btn left"><img src="images/yy_btn.png"></div>-->
+    <div class="wenwen_text left">
+        <div class="write_box">
+            <input type="text" class="left" onKeyUp="keyup()" placeholder="请输入您的问题" />
+        </div>
+        <div class="circle-button" id="wenwen">
+            按住 说话
+        </div>
+    </div>
+    <div class="wenwen_help right">
+
+        <button onClick="up_say()"  class="right">
+            <img src="/assets/img/hayao/images/set.png" alt="" />
+        </button>
+    </div>
+    <div style="opacity:0;" class="clear"></div>
+</div>
+
+<div class="yesorno-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes(0);"; data-select-number="B">不用了，我已了解</li>
+            <li class="question-each" onclick="checkYes(1);";data-select-number="A">好的</li>
+        </ul>
+    </div>
+</div>
+
+<div class="growup-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('营养饮食');"; data-select-number="B">营养饮食</li>
+            <li class="question-each" onclick="checkYes('运动睡眠和心态');";data-select-number="A">运动睡眠和心态</li>
+        </ul>
+    </div>
+</div>
+
+<div class="sanjing-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('三精葡萄糖酸锌');"; data-select-number="B">三精葡萄糖酸锌</li>
+            <li class="question-each" onclick="checkYes('三精葡萄糖酸钙');";data-select-number="A">三精葡萄糖酸钙</li>
+        </ul>
+    </div>
+</div>
+<div class="sanjing-xin-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('锌-是什么');"; data-select-number="B">“锌”介绍</li>
+            <li class="question-each" onclick="checkYes('锌-成分');";data-select-number="A">“锌”成分</li>
+            <li class="question-each" onclick="checkYes('锌-主治功能');";data-select-number="A">“锌”功能</li>
+            <li class="question-each" onclick="checkYes('锌-疗效');";data-select-number="A">“锌”疗效</li>
+        </ul>
+    </div>
+</div>
+<div class="sanjing-gai-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('钙-是什么');">是什么？</li>
+            <li class="question-each" onclick="checkYes('钙-成分');">成分？</li>
+            <li class="question-each" onclick="checkYes('钙-主治功能');">主治功能？</li>
+            <li class="question-each" onclick="checkYes('钙-疗效');">疗效？</li>
+        </ul>
+    </div>
+</div>
+
+<div class="Zn-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('Zn-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('Zn-life');">生活方式</li>
+            <li class="question-eachs" onclick="checkYes('Zn-yingyang');">营养补充剂</li>
+        </ul>
+    </div>
+</div>
+<div class="Ca-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('Ca-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('Ca-life');">生活方式</li>
+            <li class="question-eachs" onclick="checkYes('Ca-yingyang');">营养补充剂</li>
+        </ul>
+    </div>
+</div>
+<div class="ZnCa-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('ZnCa-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('ZnCa-life');">生活方式</li>
+            <li class="question-eachs" onclick="checkYes('ZnCa-yingyang');">营养补充剂</li>
+        </ul>
+    </div>
+</div>
+<div class="tan-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('tan-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('tan-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="dan-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('dan-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('dan-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="vc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('vc-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('vc-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="kuang-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('kuang-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('kuang-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="wei-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('wei-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('wei-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="yi-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('yi-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('yi-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="dha-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('dha-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('dha-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+<div class="other-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('other-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('other-life');">生活方式</li>
+        </ul>
+    </div>
+</div>
+
+<!--<div class="test-footer">-->
+<!--<div class="check_yesorno">-->
+<!--<ul class="question-box">-->
+<!--<li class="question-each" onclick="checkYes('test-good');">状况良好</li>-->
+<!--<li class="question-each" onclick="checkYes('test-bad');">状况不好</li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
+<div class="helpFunc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('helpFunc-yfzl');">预防治疗</li>
+            <li class="question-each" onclick="checkYes('helpFunc-zyzx');">专业咨询</li>
+        </ul>
+    </div>
+</div>
+<div class="fatFunc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('fatFunc-yskz');">饮食控制</li>
+            <li class="question-each" onclick="checkYes('fatFunc-jcyd');">坚持运动</li>
+        </ul>
+    </div>
+</div>
+<div class="sinFunc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('sinFunc-yscj');">饮食促进</li>
+            <li class="question-each" onclick="checkYes('sinFunc-xggl');">习惯管理</li>
+        </ul>
+    </div>
+</div>
+<div class="manyFunc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" onclick="checkYes('many-eat');">饮食习惯</li>
+            <li class="question-each" onclick="checkYes('many-life');">生活方式</li>
+            <li class="question-eachs" onclick="checkYes('many-yingyang');">营养补充剂</li>
+        </ul>
+    </div>
+</div>
+<div class="testFunc-footer">
+    <div class="check_yesorno">
+        <ul class="question-box">
+            <li class="question-each" style="height: 40px;">年龄 <input type="number" name="age" id="1" autocomplete="off" style="width:40px;text-align: center;" />(岁)</li>
+            <li class="question-each" style="height: 40px;">男:<input type="radio" name="sex" id="0" value="0" autocomplete="off"/>女 :<input type="radio" name="sex" id="7" value="1" autocomplete="off"/></li>
+            <li class="question-each" style="height: 40px;">身高 <input type="number" name="height" id="2" autocomplete="off" style="width:40px;text-align: center;"/>(cm)</li>
+            <li class="question-each" style="height: 40px;">体重 <input type="number" name="weight" id="3" autocomplete="off" style="width:40px;text-align: center;"/>(kg)</li>
+            <li class="question-each" id="sub" style="margin:0.5rem 27.5%;">提交</li>
+        </ul>
+    </div>
+</div>
+
+
+<!--图片放大弹层-->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--问答部分-->
+<div class="answer-footer">
+
+    <div class="answer1">
+        <ul class="question-box cf">
+            <li class="question-each" data-select-number="A-Ca">不明原因的腹痛</li>
+            <li class="question-each" data-select-number="B-Ca">龋齿或换牙晚</li>
+            <li class="question-each" data-select-number="C-Ca">运动时小腿痛或抽筋</li>
+            <li class="question-each" data-select-number="D-Ca">精神不振、易疲劳</li>
+            <li class="question-each" data-select-number="E-Ca">身高、体重低于同龄儿童</li>
+            <li class="question-each-sp" data-select-number="F">以上均无</li>
+        </ul>
+        <div class="answer-each-btn">确定</div>
+    </div>
+
+    <div class="answer2">
+        <ul class="question-box cf">
+            <li class="question-each" data-select-number="A-ZnCa">偏食、挑食、食欲不振</li>
+            <li class="question-each" data-select-number="B-ZnCa">注意力不集中或者记忆力下降</li>
+            <li class="question-each" data-select-number="C-ZnCa">抵抗力低、易感冒</li>
+            <li class="question-each" data-select-number="D-ZnCa">视力不佳或眼睛发干,易流泪</li>
+            <li class="question-each" data-select-number="E-ZnCa">多动、易烦躁</li>
+            <li class="question-each-sp" data-select-number="F">以上均无</li>
+
+        </ul>
+        <div class="answer-each-btn">确定</div>
+    </div>
+
+    <div class="answer3">
+        <ul class="question-box cf">
+            <li class="question-each" data-select-number="A">口疮</li>
+            <li class="question-each" data-select-number="B">刷牙时牙龈出血</li>
+            <li class="question-each" data-select-number="C">眼睑嘴唇发白、脸色苍白</li>
+            <li class="question-each" data-select-number="D">轻微磕碰就出现皮肤青紫</li>
+            <li class="question-each-sp" data-select-number="F">以上均无</li>
+        </ul>
+        <div class="answer-each-btn">确定</div>
+    </div>
+
+</div>
+<!-- 开篇免责声明 -->
+<div id="du-popup_layer">
+    <div class="du-popup-mask"></div>
+    <div class="du-popup_content">
+        <p class="du-popup-size">
+            儿童补益提醒您：在使用“百度人工智能Chatbot”前，请您仔细阅读并理解本声明，在您使用本对话平台时，即视为对本声明全部内容的透彻理解与认可。
+            1.  我们会依据《中华儿科杂志》 等相关专业知识图谱为大家解答。
+            2.  儿童补益AI-Chatbot中的问答无法全面了解具体情况，仅供参考，任何建议都不能替代执业医师的真实诊疗建议，测试题得出的任何计算结果仅供用户参考，不能作为个别诊断、用药和使用的根据，如有必要建议您及时就医。
+            3.  我们不会将您的信息向任何无关第三方公开（以上情况不包括：黑客攻击、计算机病毒侵入等不可抗力而造成的个人资料泄露、被盗用或被篡改等）。本平台所提供的所有服务内容包括但不限于：文字、图片等知识产权属于百度所有，任何人未经许可不得以任何方式进行复制、转载、引用、破译、抓取等使用本平台内容。<br>
+        </p>
+    </div>
+    <span class="du-pop-close">X</span>
+</div>
+
+<div id="hy-popup_layer">
+    <div class="du-popup-mask"></div>
+    <div class="hy-popup_content">
+
+        <p class="du-popup-size">
+            强烈建议家长在给宝宝选择运动时呢，以有氧运动为主，每次让宝宝坚持最少10分钟。每周再分别来三次高强度的身体运动、抗阻力运动和骨质增强型运动。但小度要在这先声明：运动虽好，可不要过量哦！合理安排有氧和无氧运动、关节柔韧型活动、躯干和四肢大肌肉群的抗阻力训练、身体平衡和协调性练习等，运动量一定要控制在宝宝身体可以接受的范围内。还有就是要多注意，运动时姿势的正确性，以及低、中和高强度身体活动之间的过度环节。一定要在运动前，跟宝宝一起将准备活动做充足，避免空腹运动，饭后1小时再进行运动，运动后也要及时给宝贝补充缺失的水分！小度提前祝您收获一枚爱运动的健康宝贝！！
+            <br>
+        </p>
+    </div>
+    <span class="hy-pop-close">X</span>
+</div>
+
+<div id="sp-popup_layer">
+    <div class="du-popup-mask"></div>
+    <div class="du-popup_content">
+
+        <p class="du-popup-size">
+            <br>
+        </p>
+    </div>
+    <span class="sp-pop-close">X</span>
+</div>
+
+<div id="fy-popup_layer">
+    <div class="du-popup-mask"></div>
+    <div class="du-popup_content">
+        <div class="fy-popup-size">
+            <p></p>
+            <img src="" alt="" />
+            <span style="font-size: 14px">为了孩子的健康发育，建议您定期前来做“生长发育自测”，直接输入“生长发育自测”即可进入测试！</span>
+            <span style="font-size: 14px">来看看专家给出的儿童发育建议吧 <a href="https://baike.baidu.com/item/%E5%84%BF%E7%AB%A5%E8%90%A5%E5%85%BB%E9%A3%9F%E8%B0%B1"  style="color:white;text-decoration: none; font-size: 14px;" class="reviewBtns">“专家说”</a> </span>
+        </div>
+    </div>
+    <span class="fy-pop-close">X</span>
+</div>
+{notempty name="url"}
+<input type="hidden" name="url" data-value="{$url}">
+{else /}
+<input type="hidden" name="url" data-value="self">
+{/notempty}
+
+
+<script type="text/javascript" src="/assets/libs/hayao/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/assets/libs/testhayao/js/answer.js"></script>
+<script type="text/javascript" src="/assets/libs/testhayao/js/index.js"></script>
+<script src="/assets/libs/hayao/js/photoswipe-ui-default.min.js"></script>
+<script src="/assets/libs/hayao/js/photoswipe.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () { $('body').css({'height':$(window).height()})});
+    var initPhotoSwipeFromDOM = function(gallerySelector) {
+
+        // parse slide data (url, title, size ...) from DOM elements
+        // (children of gallerySelector)
+        var parseThumbnailElements = function(el) {
+            var thumbElements = el.childNodes,
+                numNodes = thumbElements.length,
+                items = [],
+                figureEl,
+                linkEl,
+                size,
+                item;
+
+            for(var i = 0; i < numNodes; i++) {
+
+                figureEl = thumbElements[i]; // <figure> element
+
+                // include only element nodes
+                if(figureEl.nodeType !== 1) {
+                    continue;
+                }
+
+                linkEl = figureEl.children[0]; // <a> element
+
+                size = linkEl.getAttribute('data-size').split('x');
+
+                // create slide object
+                item = {
+                    src: linkEl.getAttribute('href'),
+                    w: parseInt(size[0], 10),
+                    h: parseInt(size[1], 10)
+                };
+
+
+
+                if(figureEl.children.length > 1) {
+                    // <figcaption> content
+                    item.title = figureEl.children[1].innerHTML;
+                }
+
+                if(linkEl.children.length > 0) {
+                    // <img> thumbnail element, retrieving thumbnail url
+                    item.msrc = linkEl.children[0].getAttribute('src');
+                }
+
+                item.el = figureEl; // save link to element for getThumbBoundsFn
+                items.push(item);
+            }
+
+            return items;
+        };
+
+        // find nearest parent element
+        var closest = function closest(el, fn) {
+            return el && ( fn(el) ? el : closest(el.parentNode, fn) );
+        };
+// triggers when user clicks on thumbnail
+        var onThumbnailsClick = function(e) {
+            e = e || window.event;
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+            var eTarget = e.target || e.srcElement;
+
+            // find root element of slide
+            var clickedListItem = closest(eTarget, function(el) {
+                return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+            });
+
+            if(!clickedListItem) {
+                return;
+            }
+
+            // find index of clicked item by looping through all child nodes
+            // alternatively, you may define index via data- attribute
+            var clickedGallery = clickedListItem.parentNode,
+                childNodes = clickedListItem.parentNode.childNodes,
+                numChildNodes = childNodes.length,
+                nodeIndex = 0,
+                index;
+
+            for (var i = 0; i < numChildNodes; i++) {
+                if(childNodes[i].nodeType !== 1) {
+                    continue;
+                }
+
+                if(childNodes[i] === clickedListItem) {
+                    index = nodeIndex;
+                    break;
+                }
+                nodeIndex++;
+            }
+
+
+
+            if(index >= 0) {
+                // open PhotoSwipe if valid index found
+                openPhotoSwipe( index, clickedGallery );
+            }
+            return false;
+        };
+
+        // parse picture index and gallery index from URL (#&pid=1&gid=2)
+        var photoswipeParseHash = function() {
+            var hash = window.location.hash.substring(1),
+                params = {};
+
+            if(hash.length < 5) {
+                return params;
+            }
+
+            var vars = hash.split('&');
+            for (var i = 0; i < vars.length; i++) {
+                if(!vars[i]) {
+                    continue;
+                }
+                var pair = vars[i].split('=');
+                if(pair.length < 2) {
+                    continue;
+                }
+                params[pair[0]] = pair[1];
+            }
+
+            if(params.gid) {
+                params.gid = parseInt(params.gid, 10);
+            }
+
+            return params;
+        };
+
+        var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
+            var pswpElement = document.querySelectorAll('.pswp')[0],
+                gallery,
+                options,
+                items;
+
+            items = parseThumbnailElements(galleryElement);
+
+            // define options (if needed)
+            options = {
+
+                // define gallery index (for URL)
+                galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+
+
+                getThumbBoundsFn: function(index) {
+                    // See Options -> getThumbBoundsFn section of documentation for more info
+                    var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                        pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                        rect = thumbnail.getBoundingClientRect();
+
+                    return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+                }
+                // console.log(options[0]);
+
+            };
+
+            // PhotoSwipe opened from URL
+            if(fromURL) {
+                if(options.galleryPIDs) {
+                    // parse real index when custom PIDs are used
+                    // http://photoswipe.com/documentation/faq.html#custom-pid-in-url
+                    for(var j = 0; j < items.length; j++) {
+                        if(items[j].pid == index) {
+                            options.index = j;
+                            break;
+                        }
+                    }
+                } else {
+                    // in URL indexes start from 1
+                    options.index = parseInt(index, 10) - 1;
+                }
+            } else {
+                options.index = parseInt(index, 10);
+            }
+
+            // exit if index not found
+            if( isNaN(options.index) ) {
+                return;
+            }
+
+            if(disableAnimation) {
+                options.showAnimationDuration = 0;
+            }
+
+            // Pass data to PhotoSwipe and initialize it
+            gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+            gallery.init();
+        };
+        // loop through all gallery elements and bind events
+        var galleryElements = document.querySelectorAll( gallerySelector );
+
+        for(var i = 0, l = galleryElements.length; i < l; i++) {
+            galleryElements[i].setAttribute('data-pswp-uid', i+1);
+            //galleryElements[i].setAttribute('data-pswp-uid', 05.jpg);
+            galleryElements[i].onclick = onThumbnailsClick;
+        }
+
+        // Parse URL and open gallery if it contains #&pid=3&gid=1
+        var hashData = photoswipeParseHash();
+        if(hashData.pid && hashData.gid) {
+            openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+        }
+    };
+
+    // execute above function
+    //initPhotoSwipeFromDOM('.my-gallery');
+</script>
+</body>
+</html>
